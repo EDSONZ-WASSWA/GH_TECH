@@ -1,44 +1,128 @@
-h1,
-h2,
-h3 {
-    color: #2f4f4f;
+/* Headings */
+h1, h2, h3 {
+  color: #000d07;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-header {
-    background-color: #173300;
-    color: #fff;
-    padding: 1rem 0;
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-header nav ul li {
-    margin-right: 20px;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-}
-
-header nav a:hover {
-    color: #ccc;
-}
-
+/* Main layout */
 main {
-    padding: 2em;
+  padding: 2em;
+  font-weight: 500;
+  background-color: #f9f9f9;
 }
 
-footer {
-    background-color: #173300;
-    color: #ccc;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+/* Service Overview */
+#service-overview {
+  background-color: #f1f1f1;
+  padding: 2rem;
+  border-left: 5px solid #173300;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Service List */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+/* Service Item */
+.service-item {
+  background: linear-gradient(to right, white 0%, #e6ecd9 50%, #a3b88c 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in;
+  transition: box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  box-shadow: 0 0 12px #173300;
+}
+
+/* Image and Text Layout */
+.divi {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.images {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.images:hover {
+  transform: scale(1.05);
+}
+
+/* Why Choose Us */
+#why-choose-us {
+  background-color: #fff;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#why-choose-us ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#why-choose-us li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+#why-choose-us li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #173300;
+}
+
+/* Get in Touch */
+#get-in-touch {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+#get-in-touch a {
+  color: #00bcd4;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .divi {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .images {
+    width: 90%;
+    height: auto;
+  }
+
+  .service-item {
+    width: 95%;
+  }
 }
